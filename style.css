@@ -1,0 +1,58 @@
+body{
+    font-family: monospace;
+}
+.numpad{
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    
+
+}
+.botones{
+  
+  margin:20px; 
+  background-color: #ccc; 
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 5px;
+  font-size: 50px;
+  border-radius: 5px
+
+}
+.operadores{
+    background-color:rgb(21, 89, 177);
+}
+
+.cuerpo{
+
+    border-style: solid;
+    padding: 10px;
+    width: 500px;
+    border-radius: 10px;
+    margin: auto;
+    justify-content: center;
+    background-color: #b4b0b0; 
+
+}
+.display{
+    border-style: solid;
+    height: 125px;
+    margin-bottom: 20px;
+    background-color: black; 
+    color: aliceblue;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+#equal{
+    background-color: rgb(148, 20, 20);
+}
+#display{
+    padding-right: 15px;
+    margin: 0px;
+    font-size: 70px;
+}

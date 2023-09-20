@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="cuerpo">  
+       <div class="display">
+        <p id="display">0</p>
+    </div>
+       <div class="numpad">
+         <button class="botones" onclick="digitAdder(7)">7</button>
+         <button class="botones" onclick="digitAdder(8)">8</button>
+         <button class="botones" onclick="digitAdder(9)">9</button>
+         <button class="botones operadores" onclick="operatorAdder('+')">+</button>
+         <button class="botones" onclick="digitAdder(4)">4</button>
+         <button class="botones" onclick="digitAdder(5)">5</button>
+         <button class="botones" onclick="digitAdder(6)">6</button>
+         <button class="botones operadores" onclick="operatorAdder('*')">*</button>
+         <button class="botones" onclick="digitAdder(1)">1</button>
+         <button class="botones" onclick="digitAdder(2)">2</button>
+         <button class="botones" onclick="digitAdder(3)">3</button>
+         <button class="botones operadores" onclick="operatorAdder('/')">/</button>
+         <button class="botones" onclick="digitAdder(0)">0</button>
+         <button class="botones" onclick="digitAdder(0o0)">c</button>
+         <button class="botones" id="equal">=</button>
+         <button class="botones operadores" onclick="operatorAdder('-')">-</button>
+        
+        </div>
+    </div>
+    <script src="code.js"></script>
+</body>
+</html>
