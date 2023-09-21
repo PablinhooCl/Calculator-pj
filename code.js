@@ -1,90 +1,86 @@
-
-let operando;
-let number1="";
+// `
+let operando='';
+let number1='';
+let number2='';
 let numberHolder='';
-let numberHolderDos='';
-function digitAdder(x) {
-    
-    
-    let numberOnDisplay=x;
-    console.log(numberOnDisplay)
-    numberHolder=`${numberHolder}${numberOnDisplay}`;
-    console.log(numberHolder)
-    document.getElementById("display").innerHTML = numberHolder;
-    
-    }
-function operatorAdder(y) {
-//`${number1}`
-if(y=='+'){
-    console.log(y);
-    number1=numberHolder
-    operando=`${numberHolderDos}+${number1}`;
-    console.log(operando)
-    numberHolder='';
-    const numeros= document.getElementsByClassName("botones numeros");
-    
-    for (let i = 0; i < numeros.length; i++) {
-        numeros[i].addEventListener("click", function() {
-          segundoNumero(numeros[i].innerHTML);
-          console.log(numeros[i]);
-        });
-      }console.log(numeros);
-}else if(y=='-'){
-    console.log(y);
-    number1=numberHolder
-    operando=`${numberHolderDos}-${number1}`;
-    console.log(operando)
-    numberHolder='';
-    
-    
-     const numeros= document.getElementsByClassName("botones numeros");
-    console.log(numeros);
-    for (let i = 0; i < numeros.length; i++) {
-        numeros[i].addEventListener("click", function() {
-          segundoNumero(numeros[i].innerHTML);
-          console.log(numeros[i]);
-        });
-      }console.log(numeros);
-}else if(y=='/'){
-    console.log(y);
-    number1=numberHolder
-    operando=`${numberHolderDos}/${number1}`;
-    console.log(operando)
-    numberHolder='';
+let result='';
 
+
+function equal(x, y, z){
+       if(z=='+'){
+        x=parseFloat(number1);
+        y=parseFloat(number2);
+        result= x + y;
+        console.log(result+',result');
+        document.getElementById('display').innerHTML=result;
+      number1=result;
+      number2='';
+      operando='';
+ }else if(z=='*'){
+        x=parseFloat(number1);
+        y=parseFloat(number2);
+        result= x * y;
+        console.log(result);
+        document.getElementById('display').innerHTML=result;
+    number1=result;
+    number2='';
+    operando='';
+ }else if(z=='/'){
+        x=parseFloat(number1);
+        y=parseFloat(number2);
+        result= x / y;
+        result= result.toFixed(1);  // CONDICION PARA QUE NO MUESTRE DECIMAL CUANDO SEA .0
+        console.log(result);
+        document.getElementById('display').innerHTML=result;
+    number1=result;
+    number2='';
+    operando='';
+ }else if(z=='-'){
+        x=parseFloat(number1);
+        y=parseFloat(number2);
+        result= x - y;
+        console.log(result);
+        document.getElementById('display').innerHTML=result;
+    number1=result;
+    number2='';
+    operando='';
+ }
+ 
+ 
+  
+}
+
+
+function operator(x){
+  if(operando==''){
+    operando= x;
+    console.log(operando);
+  } else if(operando!==''){
+  operando= x;
+  equal(number1, number2, operando);
+  console.log(operando+'2')
+  }}
+
+
+
+function digitAdder(x) {
+  if(operando=='' && number2==''){
     
-     const numeros= document.getElementsByClassName("numeros");
-     console.log(numeros);
-    for (let i = 0; i < numeros.length; i++) {
-    
-        numeros[i].addEventListener("click", function() {
-          segundoNumero(numeros[i].innerHTML);
-          console.log(numeros[i]);
-        });
-      }console.log(numeros);
-    
-}else if(y=='*'){
-    console.log(y);
-    number1=numberHolder
-    operando=`${numberHolderDos}*${number1}`;
-    console.log(operando)
-    numberHolder='';
-    
-    
-     const numeros= document.getElementsByClassName("botones numeros");
-     console.log(numeros);
-    for (let i = 0; i < numeros.length; i++) {
-        numeros[i].addEventListener("click", function() {
-          segundoNumero(numeros[i].innerHTML);
-          console.log(numeros[i]);
-        });
-      }console.log(numeros);
-};}
-function segundoNumero(x){
-    let numberOnDisplay=x;
-    console.log(numberOnDisplay)
-    numberHolderDos=`${numberHolderDos}${numberOnDisplay}`;
-    console.log(numberHolderDos)
-    console.log(operando)
-    document.getElementById("display").innerHTML = numberHolderDos;    
+    number1=`${number1}${x}`;
+    console.log(number1+',number1')
+    document.getElementById('display').innerHTML=number1;
+  } else if(operando!=='' && number1!==''){
+    number2=`${number2}${x}`;
+    console.log(number2+',number2')
+    document.getElementById('display').innerHTML=number2;
+  }
+}
+ 
+function ce(){
+ operando='';
+ number1='';
+ number2='';
+ numberHolder='';
+ result='';
+ document.getElementById('display').innerHTML=0
 }
