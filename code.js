@@ -61,7 +61,9 @@ function operator(x){
   console.log(operando+'2')
   } else if(operando!=''){
     operando= x;
-  }}
+  };
+  displayOpernado();
+}
 
 
 
@@ -85,18 +87,41 @@ function ce(){
  numberHolder='';
  result='';
  document.getElementById('display').innerHTML=0
-}
-while(operando!=''){
+};
+const elemMas= document.getElementById('mas');
+const elemMenos= document.getElementById('menos');
+const elemDividir= document.getElementById('dividir');
+const elemPor= document.getElementById('por');
+
+
+function displayOpernado(){
 if(operando=='+'){
-  const elem= document.getElementById('mas');
-  elem.style.backgroundColor= 'rgb(61, 120, 196)';
+  
+  elemMas.classList.add('buttonOn');
+
+  elemMenos.classList.remove('buttonOn');
+  elemDividir.classList.remove('buttonOn');
+  elemPor.classList.remove('buttonOn');
 } else if( operando=='-'){
-  const elem= document.getElementById('menos');
-  elem.style.backgroundColor= 'rgb(61, 120, 196)';
+  
+  elemMenos.classList.add('buttonOn');
+
+  elemDividir.classList.remove('buttonOn');
+  elemPor.classList.remove('buttonOn');
+  elemMas.classList.remove('buttonOn');
 }else if(operando== '/'){
-  const elem= document.getElementById('dividir');
-  elem.style.backgroundColor= 'rgb(61, 120, 196)';
+  
+  elemDividir.classList.add('buttonOn');
+
+  elemMenos.classList.remove('buttonOn');
+  elemMas.classList.remove('buttonOn');
+  elemPor.classList.remove('buttonOn');
 }else if(operando== '*'){
-  const elem= document.getElementById('por');
-  elem.style.backgroundColor= 'rgb(61, 120, 196)';
-};}
+  
+  elemPor.classList.add('buttonOn');
+
+  elemMenos.classList.remove('buttonOn');
+  elemDividir.classList.remove('buttonOn');
+  elemMas.classList.remove('buttonOn');
+};
+ }
