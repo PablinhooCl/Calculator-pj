@@ -15,7 +15,7 @@ function equal(x, y, z){
         document.getElementById('display').innerHTML=result;
       number1=result;
       number2='';
-      operando='';
+      
  }else if(z=='*'){
         x=parseFloat(number1);
         y=parseFloat(number2);
@@ -24,7 +24,7 @@ function equal(x, y, z){
         document.getElementById('display').innerHTML=result;
     number1=result;
     number2='';
-    operando='';
+    
  }else if(z=='/'){
         x=parseFloat(number1);
         y=parseFloat(number2);
@@ -34,7 +34,7 @@ function equal(x, y, z){
         document.getElementById('display').innerHTML=result;
     number1=result;
     number2='';
-    operando='';
+    
  }else if(z=='-'){
         x=parseFloat(number1);
         y=parseFloat(number2);
@@ -43,7 +43,7 @@ function equal(x, y, z){
         document.getElementById('display').innerHTML=result;
     number1=result;
     number2='';
-    operando='';
+    
  }
  
  
@@ -55,10 +55,12 @@ function operator(x){
   if(operando==''){
     operando= x;
     console.log(operando);
-  } else if(operando!==''){
+  } else if(operando!=='' && number2!==''){
   operando= x;
   equal(number1, number2, operando);
   console.log(operando+'2')
+  } else if(operando!=''){
+    operando= x;
   }}
 
 
@@ -84,3 +86,17 @@ function ce(){
  result='';
  document.getElementById('display').innerHTML=0
 }
+while(operando!=''){
+if(operando=='+'){
+  const elem= document.getElementById('mas');
+  elem.style.backgroundColor= 'rgb(61, 120, 196)';
+} else if( operando=='-'){
+  const elem= document.getElementById('menos');
+  elem.style.backgroundColor= 'rgb(61, 120, 196)';
+}else if(operando== '/'){
+  const elem= document.getElementById('dividir');
+  elem.style.backgroundColor= 'rgb(61, 120, 196)';
+}else if(operando== '*'){
+  const elem= document.getElementById('por');
+  elem.style.backgroundColor= 'rgb(61, 120, 196)';
+};}
